@@ -1,0 +1,7 @@
+{
+    "routes": {
+        "index": {
+            "controller": "IndexController"
+        }   
+    }
+}
