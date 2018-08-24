@@ -2,10 +2,8 @@
 
 class IndexController extends AppController implements ControllerInterface{
 
-    public function getHtml(){
+    public function getHtml() : string {
 
-        $a = parent::getView("index.html", ['stringKey' => 'This is our first template :)']);
-
-        return $a;
+        return parent::getView("index.html", ['stringKey' => 'This is our first template :)']);
     }
 }
