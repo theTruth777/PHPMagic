@@ -11,7 +11,7 @@ class ViewCore implements ViewCoreInterface{
     private $htmlFooterPath = 'templates/appTemplate/footer.html';
 
 
-    private function buildHtmlTemplate(string $template, string $path) : string {
+    public function buildHtmlTemplate(string $template, string $path) : string {
 
         if(strpos($template, '@template_header@') !== false){
 
