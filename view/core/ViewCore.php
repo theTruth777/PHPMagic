@@ -35,10 +35,20 @@ class ViewCore implements ViewCoreInterface{
 
             $getHtml = file_get_contents('templates/' . $templatename);
 
+            /**
+             * Build the HTML-Document header and the footer
+             */
+            $getHtml = $this->buildHtmlTemplate($getHtml, $this->htmlHeaderPath);
+
+            $getHtml = $this->buildHtmlTemplate($getHtml, $this->htmlFooterPath);
+
+            /**
+             * Insert our key-values in the HTML-Document
+             */
             if($array != NULL){
 
                 foreach($array as $key => $value){
-                    
+
                     if(strpos($getHtml, $key)){
                         $getHtml = str_replace('%' . $key . '%', $value, $getHtml);
                     }
@@ -47,14 +57,12 @@ class ViewCore implements ViewCoreInterface{
     
             }
 
-            $getHtml = $this->buildHtmlTemplate($getHtml, $this->htmlHeaderPath);
-
-            $getHtml = $this->buildHtmlTemplate($getHtml, $this->htmlFooterPath);
-
             return ['success' => true, 'html' => $getHtml];
 
         }else{
+
             return ['success' => false, 'message' => 'file_not_found'];
+            
         }
 
     }
