@@ -31,7 +31,7 @@ class ViewCore implements ViewCoreInterface{
 
     public function renderHtml(string $templatename, array $array = null) : array {
 
-        if(file_exists('templates/' . $templatename)){
+        if(file_exists('atemplates/' . $templatename)){
 
             $getHtml = file_get_contents('templates/' . $templatename);
 

@@ -39,6 +39,23 @@ class ErrorView implements ErrorViewInterface{
 
         }
 
+    }
+
+    public function render500() : array {
+        
+        if(file_exists("templates/appTemplate/error.html")){
+
+            $getHtml = file_get_contents("templates/appTemplate/error.html");
+
+            $buildHtml = $this->insertContent($getHtml, ["%errorTitle%" => "500 Error", "%errorType%" => "500", "%errorMessage%" => "Internal Server Error"]);
+    
+            return ["success" => true, "content" => $buildHtml];
+
+        }else{
+
+            return ["success" => false];
+
+        }
 
     }
 

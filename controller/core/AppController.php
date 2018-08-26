@@ -19,7 +19,11 @@ class AppController implements AppInterface{
 
         }else{
 
-            return $getView['message'];
+            $errorController = new ErrorView();
+
+            $handleError = $errorController->render500();
+
+            return $handleError['content'];
 
         }
 
