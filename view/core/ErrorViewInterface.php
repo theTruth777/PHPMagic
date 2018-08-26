@@ -2,6 +2,6 @@
 
 interface ErrorViewInterface{
 
-    public function renderHtml(string $request = NULL) : array;
+    public function render404(string $request = NULL) : array;
 
 }

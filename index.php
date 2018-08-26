@@ -19,6 +19,6 @@ if(array_key_exists($getUrl['path'], $json['routes'])){
 }else{
 
     $urlRequestError = new ErrorController();
-    echo $urlRequestError->handle404Error();
+    echo $urlRequestError->handle404Error($getUrl['path'], "404");
 
 }
