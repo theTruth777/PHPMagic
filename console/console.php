@@ -1,33 +1,14 @@
 <?php
 
-class Console {
+/**
+ * This is the PHPMagic configuration Terminal.
+ * It will help to maintain config settings of this framework.
+ * 
+ */
 
-    public function renderLine(){
+require_once "controller/ConsoleController.php";
 
-        for($i = 0; $i < 50; $i++){echo '-';}
-
-        echo "\n";
-
-    }
-
-    public function showRoutes(){
-
-        $json = json_decode(file_get_contents("config/routes.json"), true);
-        
-        echo "Route \tController\n";
-
-        $this->renderLine();
-
-        foreach($json['routes'] as $key => $value){
-
-            echo $key . "\t" . $value['controller'] . "\n";
-
-        }
-
-    }
-}
-
-$console = new Console();
+$console = new ConsoleController();
 
 if(count($argv) >1 ){
 
@@ -35,18 +16,21 @@ if(count($argv) >1 ){
 
         case "route:show":
 
-            $console->showRoutes();
+            $console->routeShow();
 
             break;
 
+        case "route:add":
+            $console->routeAdd();
+            break;
+
+        default:
+            echo "Unknown parameter.";
+            break;
     }
     
 }else{
 
-    echo "PHPMagic Configuration Terminal\n";
-    
-    $console->renderLine();
-
-    echo "route:show \t Display current URL-Routes\n";
+    $console->displayStartup();
 
 }
