@@ -1,12 +1,13 @@
 {
     "errorLogging" : {
-        "404" : {
-            "enable" : false
+        "error-404" : {
+            "enable" : false,
+            "path" : "logs/"
         },
 
         "error-500" : {
             "enable" : true,
-            "path" : "log/"
-        }        
+            "path" : "logs/"
+        }
     }
 }

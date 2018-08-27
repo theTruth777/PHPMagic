@@ -2,6 +2,6 @@
 
 interface LoggerInterface {
 
-    public function logCurrentError(int $type, string $trace);
+    public function logCurrentError(int $type, string $trace, string $message = NULL);
 
 }
