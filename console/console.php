@@ -10,7 +10,7 @@ require_once "controller/ConsoleController.php";
 
 $console = new ConsoleController();
 
-if(count($argv) >1 ){
+if(count($argv) > 1 ){
 
     switch($argv[1]){
 
@@ -21,11 +21,15 @@ if(count($argv) >1 ){
             break;
 
         case "route:add":
+
             $console->routeAdd();
+
             break;
 
         default:
+
             echo "Unknown parameter.";
+
             break;
     }
     

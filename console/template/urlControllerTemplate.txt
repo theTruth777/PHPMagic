@@ -1,0 +1,9 @@
+<?php
+
+class @ClassName@ extends AppController implements ControllerInterface{
+
+    public function getHtml() : string {
+        
+        return "hello world";
+    }
+}

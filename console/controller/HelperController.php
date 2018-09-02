@@ -6,9 +6,9 @@
 
 class HelperController {
 
-    public function readConfigJson() : array {
+    public function readUrlJson() {
 
-        $json = json_decode(file_get_contents("config/routes.json"), true);        
+        return json_decode(file_get_contents("config/routes.json"), true);        
         
     }
 
